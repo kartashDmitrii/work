@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
     // make dependent height
     let header = document.querySelector('header');
     let footer = document.querySelector('footer');
@@ -138,4 +138,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // show/hide header
-});
+};
