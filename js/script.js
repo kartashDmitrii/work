@@ -123,4 +123,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // btn-events
+
+    // show/hide header
+
+    let prevScrollpos = window.pageYOffset;
+    window.addEventListener('scroll', function() {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector('header').style.top = "0";
+        } else {
+            document.querySelector('header').style.top = `-${headerHeight}px`;
+        }
+        prevScrollpos = currentScrollPos;
+    })
+
+    // show/hide header
 });
