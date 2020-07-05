@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (prevScrollpos > currentScrollPos) {
             document.querySelector('header').style.top = "0";
         } else {
-            document.querySelector('header').style.top = `-${headerHeight}px`;
+            document.querySelector('header').style.top = `-${headerHeight * 3}px`;
         }
         prevScrollpos = currentScrollPos;
     })
