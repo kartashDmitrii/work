@@ -128,14 +128,6 @@ window.onload = () => {
             }
         });
     }
-    if (checkFlag === 'none') {
-        [...document.querySelectorAll('.download-free .download')].forEach(elem => {
-            elem.addEventListener('click', event => {
-                event.preventDefault();
-                $("main").fullpage.moveTo(1);
-            })
-        });
-    }
 
     // btn-events
 
