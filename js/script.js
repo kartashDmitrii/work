@@ -1,7 +1,7 @@
 window.onload = () => {
-    let checkFlag = window.getComputedStyle(document.querySelector('header .burger')).getPropertyValue('display');
-    let header = document.querySelector('header');
-    let footer = document.querySelector('footer');
+    let checkFlag = window.getComputedStyle(document.querySelector('.header .burger')).getPropertyValue('display');
+    let header = document.querySelector('.header');
+    let footer = document.querySelector('.footer');
     let headerHeight = Math.floor(parseInt(window.getComputedStyle(header).getPropertyValue('height')));
     let footerHeight = Math.floor(parseInt(window.getComputedStyle(footer).getPropertyValue('height')));
     if (checkFlag === 'block') {
@@ -24,7 +24,7 @@ window.onload = () => {
     // slider
 
     const siema = new Siema({
-        selector: '.catalog-slider .slider',
+        selector: '.catalog-slider .siema-slider',
         loop: false,
         onChange: () => {
             let currentDot =  document.querySelector('.catalog-slider .dots ul .current');
@@ -34,7 +34,7 @@ window.onload = () => {
             document.querySelectorAll('.catalog-slider .dots ul li')[siema.currentSlide].classList.add('current');
         }
     })
-    document.querySelectorAll('.catalog-slider .slider .slide').forEach( (elem, index) => {
+    document.querySelectorAll('.catalog-slider .siema-slider .siema-slide').forEach( (elem, index) => {
         let li = document.createElement('li');
         li.classList.add(`${index}`);
         if (index === 0){
@@ -80,7 +80,7 @@ window.onload = () => {
     // smooth-scroll
     // btn-events
     if (checkFlag === 'block') {
-        document.querySelector('header .menu .burger button').addEventListener('click', function () {
+        document.querySelector('.header .menu .burger button').addEventListener('click', function () {
             if(document.querySelector('.popups .language').style.display === 'flex'){
                 document.querySelector('.popups .language').style.right = '-100%';
                 setTimeout( ()=>{
@@ -104,7 +104,7 @@ window.onload = () => {
             }
         });
 
-        document.querySelector('header .menu .language').addEventListener('click', function () {
+        document.querySelector('.header .menu .language').addEventListener('click', function () {
             if (document.querySelector('.popups .menu').style.display === 'flex') {
                 document.querySelector('.popups .menu').style.left = '-100%';
                 setTimeout(() => {
@@ -130,4 +130,14 @@ window.onload = () => {
     }
 
     // btn-events
+
+    // page-slider
+
+    if (checkFlag === 'none'){
+        $('main').fullpage({
+            navigation: true,
+        });
+    }
+
+    // page-slider
 };
