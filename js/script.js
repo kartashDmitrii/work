@@ -128,6 +128,7 @@ window.onload = () => {
             }
         });
     }
+
     if (checkFlag === 'none') {
         [...document.querySelectorAll('.download-free .download')].forEach(elem => {
             elem.addEventListener('click', event => {
